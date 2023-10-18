@@ -8,6 +8,7 @@ import Blog from "../Pages/Blog/Blog";
 import MyCart from "../Pages/MyCart/MyCart";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import PrivateRoute from "../Private/PrivateRoute";
+import Brands from "../Layouts/Brands/Brands";
 
 const Routes = createBrowserRouter([
   {
@@ -18,10 +19,21 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: ()=>fetch('/brand.json'),
       },
       {
         path: "/blog",
         element: <Blog></Blog>,
+        loader: ()=>fetch('/subBrand.json'),
+      },
+      {
+        path: "/brand/:id",
+        element: (
+          <PrivateRoute>
+            <Brands></Brands>
+          </PrivateRoute>
+        ),
+        
       },
       {
         path: "/addProduct",
