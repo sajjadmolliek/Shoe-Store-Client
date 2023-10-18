@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="bg-[#353535]">
       <div className="w-[80%] mx-auto">
-        <footer className="footer py-10 lg:pl-28 text-white">
+        <footer className="footer  py-10 lg:pl-28 text-white">
           <nav>
             <header className="footer-title">YOUR ACCOUNT</header>
             <a className="link link-hover">Running Shoes</a>
@@ -31,13 +31,13 @@ const Footer = () => {
             <a className="link link-hover">Saturday & Sunday</a>
             <a className="link link-hover">10a.m - 8 p.m</a>
           </nav>
-          <form>
+          <form className="place-items-end">
             <div className="flex justify-end">
               <img src={logo} alt="Logo" className="w-[30%]" />
             </div>
-            <fieldset className="form-control md:w-80">
+            <fieldset className="form-control w-[90%] md:w-[100%] ">
               <label className="label">
-                <span className="label-text">Enter your email address</span>
+                <span className="label-text text-white">Enter your email address</span>
               </label>
               <div className="relative">
                 <input
@@ -50,11 +50,11 @@ const Footer = () => {
                 </button>
               </div>
             </fieldset>
-            <div className="flex gap-6 mt-8 flex-wrap">
-                <FaFacebookF className="bg-[#FFA800] p-3 text-5xl rounded-full"></FaFacebookF>
-                <AiFillYoutube className="bg-[#FFA800] p-3 text-5xl rounded-full"></AiFillYoutube>
-                <BsLinkedin className="bg-[#FFA800] p-3 text-5xl rounded-lg"></BsLinkedin>
-                <BsTwitter className="bg-[#FFA800] p-3 text-5xl rounded-full"></BsTwitter>
+            <div className="flex w-[88%] md:w-[98%]  gap-6 mt-8 flex-wrap">
+                <FaFacebookF className="bg-[#FFA800] p-1 text-3xl rounded-full"></FaFacebookF>
+                <AiFillYoutube className="bg-[#FFA800] p-1 text-3xl rounded-full"></AiFillYoutube>
+                <BsLinkedin className="bg-[#FFA800] p-1 text-3xl rounded-lg"></BsLinkedin>
+                <BsTwitter className="bg-[#FFA800] p-1 text-3xl rounded-full"></BsTwitter>
             </div>
           </form>
         </footer>
