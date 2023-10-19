@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userName, setUserName] = useState(null);
+  const [findShoes, setFindShoes] = useState([]);
 
   // Create User by email and Password
   const userCreateByEmailPassword = (email, password) => {
@@ -75,7 +76,13 @@ const AuthProvider = ({ children }) => {
     loading,
     // passing setUserName() to catch user name when Resister
     setUserName,
+    // passing setFindShoes() to Received Finding Shoes by clicking 6 by one card
+    setFindShoes,
+    // Passing Finding Shoes to use
+    findShoes
   };
+
+
 
   return (
     <AuthContext.Provider value={passValue}>{children}</AuthContext.Provider>

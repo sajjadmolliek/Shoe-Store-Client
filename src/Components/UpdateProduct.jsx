@@ -1,7 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProduct = () => {
-  const handleAdd = (e) => {
+const UpdateProduct = () => {
+  const updateData = useLoaderData();
+  const {_id,name,brand_name,type,price,description,rating,photo} = updateData;
+
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -11,44 +15,31 @@ const AddProduct = () => {
     const description = form.description.value;
     const rating = form.rating.value;
     const photo = form.photo.value;
-    const fullForm = {
-      name,
-      brand_name,
-      type,
-      price,
-      description,
-      rating,
-      photo,
-    };
-    const isNotEmpty = Object.values(fullForm).some((value) => value === "");
+    const fullForm = {name,brand_name,type,price,description,rating,photo,};
 
-    if (!isNotEmpty) {
-      fetch("http://localhost:5005/addProduct", {
-        method: "POST",
+    fetch(`http://localhost:5005/addProduct/${_id}`,{
+        method: 'PATCH',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(fullForm),
       })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.modifiedCount>0)
+        {
             form.reset();
-            Swal.fire("Yeahh!", "Successfully added product", "success");
-          } else {
-            alert("Failed to add the product");
-          }
-        });
-    } else {
-      Swal.fire("Opps!", "You should fill in the entire form", "error");
-    }
+            Swal.fire("Yeahh!", "Successfully Update product", "success");
+        }
+      })
   };
 
   return (
     <div>
-    <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-center mt-10 underline">Adding Product </h1>
+
+    <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-center mt-10 underline">Updating {name} </h1>
       <form
-        onSubmit={handleAdd}
+        onSubmit={handleUpdate}
         className="lg:w-3/5 mx-auto bg-[#FFF9ED] p-10 my-10 rounded-lg"
       >
         <div className=" flex flex-col lg:flex-row gap-12 mb-10">
@@ -57,6 +48,7 @@ const AddProduct = () => {
               Name
             </span>
             <input
+            defaultValue={name}
               name="name"
               type="text"
               placeholder="Name"
@@ -68,6 +60,7 @@ const AddProduct = () => {
               Brand Name
             </span>
             <input
+            defaultValue={brand_name}
               name="brand_name"
               type="text"
               placeholder="Brand Name"
@@ -81,6 +74,7 @@ const AddProduct = () => {
               Type
             </span>
             <input
+            defaultValue={type}
               name="type"
               type="text"
               placeholder="Type"
@@ -92,6 +86,7 @@ const AddProduct = () => {
               Price
             </span>
             <input
+            defaultValue={price}
               name="price"
               type="text"
               placeholder="Price"
@@ -105,6 +100,7 @@ const AddProduct = () => {
               Description
             </span>
             <input
+            defaultValue={description}
               name="description"
               type="text"
               placeholder="Description"
@@ -116,6 +112,7 @@ const AddProduct = () => {
               Rating
             </span>
             <input
+            defaultValue={rating}
               name="rating"
               type="text"
               placeholder="Rating"
@@ -129,6 +126,7 @@ const AddProduct = () => {
             Photo URL
           </span>
           <input
+          defaultValue={photo}
             name="photo"
             className="w-full input input-bordered input-md"
             type="text"
@@ -145,4 +143,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdateProduct;
