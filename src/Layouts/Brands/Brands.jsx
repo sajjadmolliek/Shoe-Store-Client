@@ -1,15 +1,14 @@
 import { NavLink, useLoaderData } from "react-router-dom";
-import useCustomeHook from "../../Hooks/useCustomeHook";
 import "./Brands.css";
 
 
 
 const Brands = () => {
-  // const { findShoes } = useCustomeHook();
+
   const findShoes = useLoaderData()
   console.log(findShoes);
 
-  // Array(4).fill("").map(rate => "*").join([])
+
   if (findShoes.length > 0) {
     if (findShoes.length < 4) {
       let remainCard = 4 - findShoes.length;

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
-// import useCustomeHook from "../../../Hooks/useCustomeHook";
+
 
 const OurCollections = ({ datas }) => {
-  // const { setFindShoes } = useCustomeHook();
+
 
   const handleBrandCatagory = (brandName) => {
     const lowarCaseBrandName = brandName.toLowerCase();
@@ -16,8 +16,7 @@ const OurCollections = ({ datas }) => {
       body: JSON.stringify({ brand_name: lowarCaseBrandName }), // Send the brand_name as an object
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
       });
   };
 
