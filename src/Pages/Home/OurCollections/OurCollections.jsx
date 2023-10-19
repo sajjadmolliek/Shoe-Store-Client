@@ -30,7 +30,7 @@ const OurCollections = ({ datas }) => {
           <div key={data.id}>
             <NavLink
               onClick={() => handleBrandCatagory(data.brand_name)}
-              to={`/brand/${data.brand_name}`}
+              to={`/addProducts/${data.brand_name}`}
             >
               <div className=" md:w-96 bg-[#FFF9ED]  mb-6" data-aos="flip-left">
                 <figure className="flex justify-center items-center">

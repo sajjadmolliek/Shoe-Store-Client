@@ -38,9 +38,9 @@ const Routes = createBrowserRouter([
         loader: () => fetch("https://server-of-shoes-store.vercel.app/addProduct"),
       },
       {
-        path: "/brand/:name",
+        path: "/addProducts/:name",
         element: <Brands></Brands>,
-        loader: () => fetch("https://server-of-shoes-store.vercel.app/addProducts"),
+        loader: ({params}) => fetch(`https://server-of-shoes-store.vercel.app/addProducts/${params.name.toLocaleLowerCase()}`),
       },
       {
         path: "/addProduct",
