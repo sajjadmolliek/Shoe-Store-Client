@@ -17,7 +17,7 @@ const UpdateProduct = () => {
     const photo = form.photo.value;
     const fullForm = {name,brand_name,type,price,description,rating,photo,};
 
-    fetch(`http://localhost:5005/addProduct/${_id}`,{
+    fetch(`https://server-of-shoes-store.vercel.app/addProduct/${_id}`,{
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

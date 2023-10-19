@@ -23,7 +23,7 @@ const AddProduct = () => {
     const isNotEmpty = Object.values(fullForm).some((value) => value === "");
 
     if (!isNotEmpty) {
-      fetch("http://localhost:5005/addProduct", {
+      fetch("https://server-of-shoes-store.vercel.app/addProduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
-import useCustomeHook from "../../../Hooks/useCustomeHook";
+// import useCustomeHook from "../../../Hooks/useCustomeHook";
 
 const OurCollections = ({ datas }) => {
-  const { setFindShoes } = useCustomeHook();
+  // const { setFindShoes } = useCustomeHook();
 
   const handleBrandCatagory = (brandName) => {
     const lowarCaseBrandName = brandName.toLowerCase();
 
-    fetch("http://localhost:5005/addProducts", {
+    fetch("https://server-of-shoes-store.vercel.app/addProducts", {
       method: "POST", // Change to POST to send data to the backend
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,7 @@ const OurCollections = ({ datas }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setFindShoes(data);
+        console.log(data);
       });
   };
 
@@ -31,7 +31,7 @@ const OurCollections = ({ datas }) => {
           <div key={data.id}>
             <NavLink
               onClick={() => handleBrandCatagory(data.brand_name)}
-              to={`/brand/${data.id}`}
+              to={`/brand/${data.brand_name}`}
             >
               <div className=" md:w-96 bg-[#FFF9ED]  mb-6" data-aos="flip-left">
                 <figure className="flex justify-center items-center">
