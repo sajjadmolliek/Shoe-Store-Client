@@ -24,7 +24,7 @@ const handleAddToCart = () =>{
           if (data.acknowledged) {
             Swal.fire("Yeahh!", "Successfully added product", "success");
           } else {
-            alert("Failed to add the product");
+            Swal.fire("Opps!","Failed to add the product","error");
           }
         });
 }
