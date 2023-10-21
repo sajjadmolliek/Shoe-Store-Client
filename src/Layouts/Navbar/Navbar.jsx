@@ -62,6 +62,7 @@ const Navbar = () => {
                 className=" bg-[#353535] menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-56 h-60 space-y-3"
               >
                 {navitems}
+                
                 <div className="flex items-center">
                   {user != null ? (
                     <button className="px-3 py-2 rounded-lg mx-3 border-0  text-white bg-[#FFA800]">
@@ -83,7 +84,9 @@ const Navbar = () => {
                   ) : (
                     ""
                   )}
+                  
                 </div>
+                
               </ul>
             </div>
             <NavLink to={"/"}>
@@ -99,6 +102,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-start col-span-3 justify-center hidden lg:flex lg:w-[70%]">
             <ul  className=" flex gap-6 px-1 text-[16px]">{navitems}</ul>
+            
           </div>
           <div className="navbar-end">
             {user != null ? (

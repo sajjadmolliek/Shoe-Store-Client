@@ -10,12 +10,12 @@ const CngThm = () => {
 
   return (
     <div className="flex justify-end p-6">
-      <div className="bg-white w-10 rounded-3xl">
+      <div className=" w-10 rounded-3xl">
         <label className="swap swap-rotate">
           <input onClick={toggleTheme} type="checkbox" />
           <svg
             
-            className="swap-on fill-current w-10 h-10"
+            className="swap-on text-[#FFA800] fill-current w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -23,7 +23,7 @@ const CngThm = () => {
           </svg>
           <svg
             
-            className="swap-off fill-current w-10 h-10"
+            className="swap-off text-[#FFA800] fill-current w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
