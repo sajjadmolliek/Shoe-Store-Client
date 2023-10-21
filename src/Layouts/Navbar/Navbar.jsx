@@ -20,7 +20,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-[#FFA800] font-semibold underline" : "text-white"}to={"/Blog"}>
-          Blog
+          All Products
         </NavLink>
       </li>
       <li>
