@@ -5,4 +5,4 @@
 4. User can Delete Items From Cart.
 5. Admin can Add brands Products and can Update also.
 
-live link: https://shoes-store-c81c1.web.app/
+live link: https://shoes-store-c81c1.surge.sh/
